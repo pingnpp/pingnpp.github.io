@@ -1,0 +1,48 @@
+{
+    "eduList": [
+        {   "deg": "High School",
+            "inst": "Assumption College",
+            "id": 1,
+            "start": "May 2011",
+            "end": "Feb 2017",
+            "crs": "Science & Mathematic",
+            "achv": [
+
+            ]
+        },
+        {   "deg": "Bachelor of Robotics Engineering",
+            "inst": "King Mongkut's University of Technology Thonburi",
+            "id": 2,
+            "start": "Aug 2017",
+            "end": "May 2021",
+            "crs": "Robotics & Automation System",
+            "achv": [
+
+            ]
+        }
+    ],
+    "projects": [
+        {   "name": "Portfolio Website",
+            "desc": "Developed a personal portfolio using Vue.js.",
+            "id": 1,
+            "start": "2023-01",
+            "end": "2023-03",
+            "techs": ["Vue.js", "HTML", "CSS"],
+            "outc": "Increased job inquiries by 15%."
+        }
+    ],
+    "jobs": [
+        {   "title": "Robotics Embedded Engineer",
+            "comp": "Ai and Robotics Ventures",
+            "id": 1,
+            "loc": "BKK, TH",
+            "start": "Feb 2022",
+            "end": "Present",
+            "desc": "Developed web applications using Vue.js.",
+            "achv": [
+                "Led the development of an e-commerce platform.",
+                "Improved page load times by 30%."
+            ]
+        }
+    ]
+}
