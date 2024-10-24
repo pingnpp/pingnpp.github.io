@@ -1,34 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import JobDetial from '../views/JobDetial.vue'
-import NotFound from '@/views/NotFound.vue'
+const Home = () => import('../views/Home.vue')
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+  { path: '/', name: 'Home', component: Home },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () => import('../views/About.vue')
   },
   {
     path: '/job/:id',
     name: 'JobDetial',
-    component: JobDetial
+    component: () => import('../views/JobDetial.vue'),
+    props: true,
   },
   {
-    path: '/:catchAll(.*)',
+    path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
+    component: () => import('../views/NotFound.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 

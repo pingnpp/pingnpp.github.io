@@ -26,9 +26,12 @@
     <div class="card-content">
         <!-- <p>Join us in celebrating our love!</p>
         <h2>1 Year Together</h2> -->
-        <p>Date: October 5, 2024</p>
-        <p>Time: 5:00 PM</p>
-        <p>Venue: To Be Continuous</p>
+        <p>Dear Min-Dang T-Rak
+        <br><br><br>Thank you for never leaving my side, and for always forgiving me, no matter what.
+        <br><br>I’m sorry for the times I’ve upset you, but from now on, we will walk this journey together. 
+        <br><br>No matter what lies ahead, I promise to take care of us and give my all for our happiness</p>
+        <!-- <p>Time: 5:00 PM</p>
+        <p>Venue: To Be Continuous</p> -->
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" id="svg5" version="1.1" viewBox="0 0 298 49">
         <filter id="blur">
@@ -43,9 +46,7 @@
                 pathLength="1" />
         </g>
     </svg>
-    <div class="card-footer">
-        <p>We can't wait to celebrate with you!</p>
-    </div>
+    <div class="card-footer"></div>
   </div>
 </div>
 </template>
@@ -58,42 +59,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-:root {
-    --sans-serif: 'Open Sans', sans-serif;
-    --serif: 'Lora', serif;
-    --gray: #8e9aaf;
-    --pale: #eac7cc;
-    }
 
-    * {
-        font-family: var(--sans-serif);
-        font-size: min(1vw, 1vh);
-        color: var(--gray);
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body::before {
-        --line: color-mix(in lch, canvasText 25%, transparent);
-        --size: 40px;
-        content: '';
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        background: linear-gradient(90deg,
-                var(--line) 1px,
-                transparent 1px var(--size)) 0 -5vmin / var(--size) var(--size),
-            linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(--size) var(--size);
-        mask: linear-gradient(-45deg, transparent 60%, white);
-        top: 0;
-        z-index: -1;
-        /* : left; */
-    }
 
     .card {
-        width: min(80vw, 80vh);
-        height: min(57vw, 57vh);
+        width: min(90vw, 90vh);
+        height: min(64vw, 64vh);
         position: absolute;
         margin: auto;
         left: 0;
@@ -242,11 +212,12 @@ export default {
     }
 
     .card-content {
-        margin: 50% 20% 40% 20%;
+        margin: 37% 10% 33% 10%;
     }
     .card-content p {
         font-size: min(1.5vw, 1.5vh);
-        margin: 5%;
+        margin: 0;
+        text-align: left;
     }
 
     .card-content h2 {

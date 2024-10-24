@@ -1,0 +1,81 @@
+{
+    "linkList": [
+        {   "name": "pingnpp",
+            "url": "https://www.github.com/pingnpp",
+            "icon": ["fab", "github"]
+        },
+        {   "name": "nopporn.bus@gmail.com",
+            "url": "mailto:nopporn.bus@gmail.com",
+            "icon": ["fas", "envelope"]
+        },
+        {   "name": "Nopporn Bussabavalai",
+            "url": "https://www.linkedin.com/in/nopporn-bus",
+            "icon": ["fab", "linkedin"]
+        },
+        {   "name": "Ping Nopporn",
+            "url": "https://www.facebook.com/nopporn.bussabavalai",
+            "icon": ["fab", "facebook"]
+        },
+        {   "name": "ping.nb",
+            "url": "https://www.instagram.com/ping.nb",
+            "icon": ["fab", "instagram"]
+        }
+    ],
+    "eduList": [
+        {   "id": 1,
+            "deg": "High School",
+            "inst": "Assumption College",
+            "start": "May 2011",
+            "end": "Feb 2017",
+            "crs": "Science & Mathematic",
+            "achv": [
+
+            ]
+        },
+        {   "id": 2,
+            "deg": "Bachelor of Robotics Engineering",
+            "inst": "King Mongkut's University of Technology Thonburi",
+            "start": "Aug 2017",
+            "end": "May 2021",
+            "crs": "Robotics & Automation System",
+            "achv": [
+
+            ]
+        }
+    ],
+    "projectList": [
+        {   "id": 1,
+            "name": "Portfolio Website",
+            "desc": "Developed a personal portfolio using Vue.js.",
+            "start": "2023-01",
+            "end": "2023-03",
+            "techs": ["Vue.js", "HTML", "CSS"],
+            "outc": "Increased job inquiries by 15%."
+        }
+    ],
+    "jobList": [
+        {   "id": 1,
+            "title": "Robotics Embedded Engineer",
+            "comp": "Ai and Robotics Ventures",
+            "loc": "BKK, TH",
+            "start": "Feb 2022",
+            "end": "Present",
+            "desc": "Developed web applications using Vue.js.",
+            "achv": [
+                "Led the development of an e-commerce platform.",
+                "Improved page load times by 30%."
+            ]
+        }
+    ],
+    "picList": [
+        {   "id": 1,
+            "path": "../assets/BonVoyage.png",
+            "desc": "firsrt"
+            
+        },
+        {   "id": 2,
+            "path": "@/assets/Bon Voyage - HORRUS.png",
+            "desc": "second"
+        }
+    ]
+}

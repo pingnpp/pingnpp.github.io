@@ -1,32 +1,40 @@
-<template>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
-    <h1>asdf</h1>
-    <div v-if="job">
+const props = defineProps({
+    id: {
+        type: String,
+        Required: true
+    }
+})
+const job = ref({})
+const isLoading = ref(true)
+const router = useRouter()
+
+onMounted(async() => {
+    const result = await fetch(`http://localhost:3000/jobList/${props.id}`);
+    if(result.status == 404){
+        router.push({name: 'NotFound'});
+        return;
+    }
+    const response = await result.json();
+    job.value = response;
+    isLoading.value = false;
+})
+
+</script>
+
+
+<template>
+    <div v-if="isLoading">isLoading</div>
+    <div v-else>
         <h1>{{ job.title }}</h1>
-        <!-- <p>{{ job.comp }}</p>
+        <p>{{ job.comp }}</p>
         <p>{{ job.loc }}</p>
         <p>{{ job.start }}</p>
         <p>{{ job.end }}</p>
         <p>{{ job.desc }}</p>
-        <p>{{ job.achv }}</p> -->
+        <p>{{ job.achv }}</p>
     </div>
 </template>
-
-<script>
-export default {
-    props: ['id'],
-    data() {
-        return {
-            // id: this.$route.params.id,
-            job: null
-        }
-    },
-    mounted() {
-        console.log(this.id)
-        fetch('http://localhost:3000/jobs/' + this.id)
-            .then((res) => res.json())
-            .then(data => this.job = data)
-            .catch(err => console.log(err.message))
-    }
-}
-</script>
