@@ -1,0 +1,12 @@
+# temporary files
+.DS_Store
+
+# vue cache files
+node_modules
+
+# mock data
+data
+
+# other
+.vscode
+~*
