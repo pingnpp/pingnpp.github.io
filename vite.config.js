@@ -11,6 +11,6 @@ export default defineConfig({
             }
         ]
     },
-    base: '/pingnpp.github.io',
+    base: '/',
     plugins: [vue()]
 })

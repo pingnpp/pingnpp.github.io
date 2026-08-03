@@ -52,9 +52,10 @@ export const useData = () => {
      */
     const fetchEssentials = async () => {
         // console.log(constants.BASE_PATH)
-        const jSections = await _loadJson(constants.BASE_PATH + '/data/sections.json')
-        // const jSettings = await _loadJson(constants.BASE_PATH + '/data/settings.json')
-        // const jStrings = await _loadJson(constants.BASE_PATH + '/data/strings.json')
+        // const dataDir = import.meta.env.VITE_DATA_PATH || '/data'
+        const jSections = await _loadJson(constants.DATA_PATH + '/sections.json')
+        // const jSettings = await _loadJson(constants.DATA_PATH + '/settings.json')
+        // const jStrings = await _loadJson(constants.DATA_PATH + '/strings.json')
 
         _jsonData.sections = jSections['sections']
         // _jsonData.categories = jSections['categories']

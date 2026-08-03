@@ -2,10 +2,13 @@
  * Created by Ryan Balieiro on 08.23.2023
  * Hub for defining app constants.
  */
-const SIDEBAR_COLUMN_SIZE = '280px';
 export function useConstants() {
     // /** @const **/
     const BASE_PATH =  import.meta.env.BASE_URL.replace(/\/$/, '')
+    
+    const DATA_DIR = import.meta.env.VITE_DATA_PATH || '/data'
+
+    const DATA_PATH = `${BASE_PATH}${DATA_DIR}`
 
     // /** @const **/
     // const BOOTSTRAP_BREAKPOINTS = {
@@ -62,6 +65,7 @@ export function useConstants() {
 
     return {
         BASE_PATH,
+        DATA_PATH,
         // HTML_CLASSES,
         // BOOTSTRAP_BREAKPOINTS,
         LOCAL_STORAGE_ITEMS,

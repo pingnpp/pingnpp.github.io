@@ -1,0 +1,65 @@
+name: Build and Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate JSON files from GitHub Environment
+        env:
+          SECTIONS_DATA: ${{ vars.MY_SECTIONS_JSON }}
+          SETTINGS_DATA: ${{ vars.MY_SETTINGS_JSON }}
+        run: |
+          mkdir -p public/data
+          
+          echo "$SECTIONS_DATA" > public/data/sections.json
+          echo "$SETTINGS_DATA" > public/data/settings.json
+
+      - name: Build Project
+        run: npm run build
+        env:
+          VITE_DATA_PATH: ${{ vars.VITE_DATA_PATH }}
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
