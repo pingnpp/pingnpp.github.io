@@ -61,7 +61,7 @@ export const useData = () => {
         // _jsonData.categories = jSections['categories']
         // _jsonData.settings = jSettings
         // _jsonData.strings = jStrings
-        // console.log(_jsonData)
+        console.log(_jsonData)
 
         // _progressData.loadedFiles = 3
         // _progressData.totalFiles += _jsonData.sections.length
