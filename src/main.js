@@ -1,4 +1,4 @@
-import '@/assets/base.css'
+import './assets/base.css'
 import {createApp} from "vue"
 // import VueScrollactive from 'vue-scrollactive'
 // import {createAppRouter} from "./router/router.js"

@@ -35,10 +35,10 @@ jobs:
           SECTIONS_DATA: ${{ vars.MY_SECTIONS_JSON }}
           SETTINGS_DATA: ${{ vars.MY_SETTINGS_JSON }}
         run: |
-          mkdir -p public/data
+          mkdir -p data
           
-          echo "$SECTIONS_DATA" > public/data/sections.json
-          echo "$SETTINGS_DATA" > public/data/settings.json
+          echo "$SECTIONS_DATA" > data/sections.json
+          echo "$SETTINGS_DATA" > data/settings.json
 
       - name: Build Project
         run: npm run build

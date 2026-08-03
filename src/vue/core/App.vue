@@ -30,6 +30,7 @@ import MenuItem from "@/components/menuItem.vue";
 import SectionItem from "@/components/sectionItem.vue"
 
 const data = useData();
+console.log(data.getSections())
 </script>
 
 <style scoped>
