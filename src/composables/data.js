@@ -53,10 +53,10 @@ export const useData = () => {
     const fetchEssentials = async () => {
         // console.log(constants.BASE_PATH)
         // const dataDir = import.meta.env.VITE_DATA_PATH || '/data'
+        console.log("👉 กำลังพยายามไปดึงไฟล์จาก:", constants.DATA_PATH + '/sections.json');
         const jSections = await _loadJson(constants.DATA_PATH + '/sections.json')
         // const jSettings = await _loadJson(constants.DATA_PATH + '/settings.json')
         // const jStrings = await _loadJson(constants.DATA_PATH + '/strings.json')
-
         _jsonData.sections = jSections['sections']
         // _jsonData.categories = jSections['categories']
         // _jsonData.settings = jSettings
