@@ -6,7 +6,7 @@ Thumbs.db
 # Environment & Secrets
 .env*
 !.env.example
-data/
+public/
 
 # Dependencies
 node_modules/

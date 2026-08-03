@@ -33,12 +33,12 @@ jobs:
       - name: Generate JSON files from GitHub Environment
         env:
           SECTIONS_DATA: ${{ vars.MY_SECTIONS_JSON }}
-          SETTINGS_DATA: ${{ vars.MY_SETTINGS_JSON }}
+          # SETTINGS_DATA: ${{ vars.MY_SETTINGS_JSON }}
         run: |
           mkdir -p public/data
           
           echo "$SECTIONS_DATA" > public/data/sections.json
-          echo "$SETTINGS_DATA" > public/data/settings.json
+          # echo "$SETTINGS_DATA" > public/data/settings.json
 
       - name: Build Project
         run: npm run build
