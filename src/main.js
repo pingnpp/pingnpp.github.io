@@ -18,17 +18,18 @@ const data = useData()
 
 library.add(fas, fab)
 
-data.fetchEssentials().then(r => {
+data.fetchEssentials()
+    .then(r => {
     // await data.fetchAll()
-//     // const language = useLanguage()
-//     // language.init(data.getSettings()['supportedLanguages'])
+    // const language = useLanguage()
+    // language.init(data.getSettings()['supportedLanguages'])
 
-//     // const navigation = useNavigation()
-//     // navigation.init(data.getSections(), data.getCategories())
-
+    // const navigation = useNavigation()
+    // navigation.init(data.getSections(), data.getCategories())
     createApp(App)
         .component('font-awesome-icon', FontAwesomeIcon)
-        // .use(VueScrollactive)
-        // .use(router)
         .mount('#app')
-})
+    })
+    .catch(error => {
+        console.error("🚨 เกิดข้อผิดพลาดในการโหลดไฟล์ JSON, Vue จึงไม่ทำงาน:", error)
+    })
