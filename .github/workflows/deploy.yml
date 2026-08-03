@@ -37,8 +37,8 @@ jobs:
         run: |
           mkdir -p public/data
           
-          echo "$SECTIONS_DATA" > public/data/sections.json
-          # echo "$SETTINGS_DATA" > public/data/settings.json
+          echo "${SECTIONS_DATA:-{}}" > public/data/sections.json
+          echo "${SETTINGS_DATA:-{}}" > public/data/settings.json
 
       - name: Build Project
         run: npm run build

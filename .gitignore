@@ -10,5 +10,6 @@ public/
 
 # Dependencies
 node_modules/
+.vite/
 
 # Logs & Build Outputs
