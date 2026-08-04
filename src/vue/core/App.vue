@@ -34,6 +34,12 @@ console.log(data.getSections())
 </script>
 
 <style scoped>
+:global(:root) {
+    --pad: 6px;
+    --rad: 35px;
+    --app-bg-color: #FFF;
+    --text-dark: #1a1a1a;
+}
 :global(body) {
     overflow: hidden;
 }
