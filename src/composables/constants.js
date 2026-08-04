@@ -6,11 +6,11 @@ export function useConstants() {
     // /** @const **/
     const BASE_PATH =  import.meta.env.BASE_URL.replace(/\/$/, '')
     
-    const DATA_DIR = import.meta.env.VITE_DATA_PATH || '/public/data'
+    const DATA_DIR = import.meta.env.VITE_DATA_PATH || '/data'
 
     const DATA_PATH = `${BASE_PATH}${DATA_DIR}`
 
-    const files = import.meta.glob('/public/data/*.json');
+    const files = import.meta.glob('/data/*.json');
     console.log("📂 รายชื่อไฟล์ JSON ที่ Vite มองเห็น:");
     for (const path in files) {
     console.log("✔️ พบไฟล์:", path);
