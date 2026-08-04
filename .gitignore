@@ -7,9 +7,11 @@ Thumbs.db
 .env*
 !.env.example
 public/
+data/
 
 # Dependencies
 node_modules/
 .vite/
 
 # Logs & Build Outputs
+dist/
