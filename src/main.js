@@ -10,7 +10,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import App from '@/vue/core/App.vue'
 
-import { useData } from "@/composables";
+import { useData } from "@/composables/data.js";
 // import {useLanguage} from "./composables/language.js"
 // import {useNavigation} from "./composables/navigation.js"
 
