@@ -2,20 +2,23 @@
     <div class="app">
         <main class="content">
             <div class="site-box glass">
-                <SectionItem
+                <!-- <SectionItem
                     v-for="section in data.getSections()" 
                     :key="section.id"
                     :item="section"
-                />
+                /> -->
+                <h1 style="color: black; font-size: 30px;">ถ้าเห็นข้อความนี้ แปลว่า VUE ทำงานปกติ!</h1>
+                <p style="color: black;">มี Data ทั้งหมด: {{ data.getSections().length }} ตัว</p>
             </div>
         </main>
         <aside class="sidebar">
             <nav class="nav-box">
-                <MenuItem
+                <!-- <MenuItem
                     v-for="item in data.getSections()" 
                     :key="item.id" 
                     :item="item"
-                />
+                /> -->
+                <p>เมนู</p>
             </nav>
         </aside>
         <footer class="footer">
