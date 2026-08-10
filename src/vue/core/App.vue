@@ -3,121 +3,85 @@
         <main class="content">
             <div class="site-box glass">
                 <SectionItem
-                    v-for="section in data.getSections()" 
+                    v-for="section in sections"
                     :key="section.id"
-                    :item="section"
+                    :data="section"
                 />
             </div>
         </main>
         <aside class="sidebar">
             <nav class="nav-box">
                 <MenuItem
-                    v-for="item in data.getSections()" 
-                    :key="item.id" 
-                    :item="item"
+                    v-for="section in sections"
+                    :key="section.id"
+                    :data="section"
                 />
             </nav>
         </aside>
         <footer class="footer">
-        <p>© 2026 CV - License PinG</p>
+            <p>© 2026 CV - License PinG</p>
         </footer>
     </div>
 </template>
 
 <script setup>
-import { useData, useUtils } from "@/composables";
+import { computed } from 'vue';
+import { useData } from "@/composables";
 import MenuItem from "@/components/menuItem.vue";
 import SectionItem from "@/components/sectionItem.vue"
-
 const data = useData();
-console.log(data.getSections())
+const sections = computed(() => data.getSections());
 </script>
 
 <style scoped>
-:global(:root) {
-    --pad: 6px;
-    --rad: 35px;
-    --app-bg-color: #FFF;
-    --text-dark: #1a1a1a;
-}
 :global(body) {
     overflow: hidden;
 }
-[class*="-box"] {
-    padding: var(--pad);
-    gap: var(--pad);
-    border-radius: calc(var(--rad) - var(--pad));
-}
-
 .app {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     padding: var(--pad);
-    position: relative;
-
     background-color: var(--app-bg-color);
-
-    & > * {
-        display: grid;
-        padding: var(--pad);
-        gap: var(--pad);
-        border-radius: var(--rad);
-    }
 }
-
 .content {
     flex: 1;
-    color: var(--text-dark);
-
-    & [class*="-box"] {
-        display: block;
-
-        overflow-y: auto;
-        scrollbar-width: none;
-        overscroll-behavior-y: none;
-    }
+    overflow: hidden;
 }
-.site-box > .section-container:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    margin-bottom: var(--pad);
+.site-box {
+    --depth: 1;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    overscroll-behavior-y: none;
+    flex-direction: column;
+    padding: 0;
 }
-
 .sidebar {
-    display: block;
-    width: fit-content;
-    overflow: visible !important;
-
-    position: fixed !important;
+    position: fixed;
     left: var(--pad);
     top: 50%;
     transform: translateY(-50%);
-    z-index: 9999 !important;
-
-    opacity: 0.3;
+    z-index: 999;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
-
-    & [class*="-box"] {
-        display: inline-grid;
-        grid-template-columns: max-content;
-    }
-    .nav-box:hover :deep(.label) {
-        max-width: 500px;
-        margin-left: var(--pad); 
-    }
 }
 .sidebar:hover {
-    opacity: .8;
+    opacity: 0.8;
 }
-
+.nav-box {
+    --depth: 1;
+    flex-direction: column;
+}
+.nav-box:hover :deep(.label) {
+    max-width: 500px;
+    margin-left: var(--pad);
+}
 .footer {
-    height: fit-content;
-    line-height: 1;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    padding: 0;
+    text-align: center;
     font-size: 10px;
+    white-space: nowrap;
+    margin-top: var(--pad);
 }
 </style>

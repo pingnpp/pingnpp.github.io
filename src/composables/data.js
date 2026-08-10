@@ -1,7 +1,3 @@
-/**
- * Created by Ryan Balieiro on 08.23.2023
- * This composable will fetch and manage the application data.
- */
 import {reactive} from "vue"
 // import {useUtils} from "./utils.js"
 // import {useLanguage} from "./language.js"
@@ -57,7 +53,7 @@ export const useData = () => {
         const jSections = await _loadJson(constants.DATA_PATH + '/sections.json')
         // const jSettings = await _loadJson(constants.DATA_PATH + '/settings.json')
         // const jStrings = await _loadJson(constants.DATA_PATH + '/strings.json')
-        _jsonData.sections = jSections['sections']
+        _jsonData.sections = jSections
         // _jsonData.categories = jSections['categories']
         // _jsonData.settings = jSettings
         // _jsonData.strings = jStrings

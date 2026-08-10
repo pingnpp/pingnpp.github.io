@@ -13,8 +13,6 @@
   --min-height: calc((var(--rad) - var(--pad) * 2) * 2.1);
   /* app */
   --app-bg-color: #FFF;
-  
-  
   /* aside */
   --aside-bg-color: transparent;
   --aside-width: 150px;
@@ -23,7 +21,7 @@
   /* colors */
   --primary-color: #c8ff00;
   --secondary-color: #9d84b7;
-  --text-dark: #1a1a1a;
+  --text-dark: #1f1f1f;
   --text-light: #ffffff;
   --border-color: #e0e0e0;
   --card-bg: #ffffff;
@@ -31,4 +29,43 @@
 [class*="glass"] {
   background-color: var(--glass-bg-color);
   backdrop-filter: blur(10px);
+}
+[class*="-box"] {
+  display: flex;
+  --corner: calc(var(--rad) - (var(--pad) * var(--depth, 1)));
+  min-width: calc(var(--corner) * 2.1);
+  border-radius: var(--corner);
+  padding: var(--pad);
+  gap: var(--pad);
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+.icon {
+  flex-shrink: 0;
+  text-align: center;
+}
+h1, h2 {
+  margin: 0;
+}
+.corner {
+  --c-rad: 20px;
+  --c-size: 30px;
+  position: relative;
+}
+.corner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: var(--pad) solid #ff4757;
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#000, #000) top left / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) top right / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) bottom left / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) bottom right / var(--c-size) var(--c-size) no-repeat;
+  mask:
+    linear-gradient(#000, #000) top left / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) top right / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) bottom left / var(--c-size) var(--c-size) no-repeat,
+    linear-gradient(#000, #000) bottom right / var(--c-size) var(--c-size) no-repeat;
 }

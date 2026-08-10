@@ -10,7 +10,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import App from '@/vue/core/App.vue'
 
-import { useData } from "@/composables/data.js";
+import { useData } from "@/composables";
 // import {useLanguage} from "./composables/language.js"
 // import {useNavigation} from "./composables/navigation.js"
 
@@ -31,5 +31,5 @@ data.fetchEssentials()
         .mount('#app')
     })
     .catch(error => {
-        console.error("🚨 เกิดข้อผิดพลาดในการโหลดไฟล์ JSON, Vue จึงไม่ทำงาน:", error)
+        console.error("Vue error", error)
     })
