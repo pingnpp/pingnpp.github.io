@@ -37,21 +37,19 @@ jobs:
           MANIFEST: ${{ vars.MANIFEST }}
           ALL_VARS: ${{ toJSON(vars) }}
         run: |
-          mkdir -p src/data
+          mkdir -p public/data
           [ ! -z "$MANIFEST" ] || { echo "Not found MANIFEST in GitHub"; exit 1; }
           echo "$MANIFEST" | jq -c '.[]' | while read item; do
             filepath=$(echo "$item" | jq -r '.filepath')
             env_key=$(echo "$item" | jq -r '.env_key')
             content=$(echo "$ALL_VARS" | jq -r ".[\"$env_key\"] // empty")
             [ -n "$content" ] || { echo "Not found $env_key"; continue; }
-            mkdir -p "$(dirname "src/data/$filepath")"
-            echo "$content" > "src/data/$filepath"
+            mkdir -p "$(dirname "public/data/$filepath")"
+            echo "$content" > "public/data/$filepath"
           done
 
       - name: Build Project
         run: npm run build
-        env:
-          VITE_DATA_PATH: ${{ vars.VITE_DATA_PATH }}
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
